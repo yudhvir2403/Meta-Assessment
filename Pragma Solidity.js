@@ -9,44 +9,45 @@ Assessment Requirements
 4. For good measure, getTotalSupply() should return the number of NFT's you have created
 */
 
-// create a variable to hold your NFT's
-const NFTs = []
+// Create a variable to hold your NFTs
+const NFTs = [];
 
-// this function will take in some values as parameters, create an
+// This function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
-// and store it in the variable above.
-function mintNFT (_name, _eyecolor, _shirtType, _bling) {
-    const NFTs = {
+// and store it in the NFTs array above.
+function mintNFT(_name, _eyecolor, _shirtType, _bling) {
+    const NFT = {
         "name": _name,
         "eyecolor": _eyecolor,
         "shirtType": _shirtType,
         "bling": _bling
-    }
-    NFTs.push(NFT);
+    };
+    NFTs.push(NFT); // Push the NFT object into the NFTs array
     console.log("Minted: " + _name);
 }
 
-// create a "loop" that will go through an "array" of NFT's
+// Create a "loop" that will go through the array of NFTs
 // and print their metadata with console.log()
-function listNFTs () {
-    for(let i = 0; i < NFTs.length; i++){
-        console.log("\nID: \t\t" + (i+1));
+function listNFTs() {
+    for(let i = 0; i < NFTs.length; i++) {
+        console.log("\nID: \t\t" + (i + 1));
         console.log("Name: \t\t" + NFTs[i].name);
-        console.log("Eyecolor: \t\t" + NFTs[i].eyecolor);
-        console.log("Shirt Type: \t\t" + NFTs[i].shirtType);
+        console.log("Eyecolor: \t" + NFTs[i].eyecolor);
+        console.log("Shirt Type: \t" + NFTs[i].shirtType);
         console.log("Bling: \t\t" + NFTs[i].bling);
     }
 }
 
-// print the total number of NFTs we have minted to the console
+// Print the total number of NFTs minted
 function getTotalSupply() {
-    console.log("\n" + NFTs.length);
+    console.log("\nTotal NFTs minted: " + NFTs.length);
 }
 
-// call your functions below this line
+// Call the functions to mint NFTs and display the results
 mintNFT("Bob", "Blue", "Hoodie", "Gold chain");
-mintNFT("Sue", "Blue", "Hoodie", "Gold chain");
-mintNFT("Tim", "Blue", "Hoodie", "Gold chain");
-mintNFT("Jogn", "Blue", "Hoodie", "Gold chain");
+mintNFT("Sue", "Green", "T-shirt", "Silver necklace");
+mintNFT("Tim", "Brown", "Sweater", "Diamond ring");
+mintNFT("Jogn", "Hazel", "Jacket", "Ruby bracelet");
+
 listNFTs();
 getTotalSupply();
